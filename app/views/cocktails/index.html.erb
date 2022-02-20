@@ -2,10 +2,17 @@
   body {
     background-image: url('https://images.squarespace-cdn.com/content/v1/5402e23ce4b0a7034afad3a2/1624012256975-N25TPPJMEIA8V9IHKKLK/Gin+Garnish+Guide.jpg?format=2500w');
   }
+  h1 {
+    color: white;
+  }
+  h2 {
+    color: white;
+  }
+
 </style>
 <div class="container">
   <h1>Cocktail!</h1>
-  <h2><%= link_to "Create a cocktail", new_cocktail_path %></h2>
+  <h2><%= link_to "Create a cocktail", new_cocktail_path, class: 'btn btn-primary mt-3' %></h2>
   <div class="card-tags">
     <% @cocktails.each do |cocktail| %>
       <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
