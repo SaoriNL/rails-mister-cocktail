@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# db/seeds.rb
+Ingredient.create(name: "lemon")
+Ingredient.create(name: "ice")
+Ingredient.create(name: "mint leaves")
+Ingredient.create(name: "sparkling water")
+Ingredient.create(name: "gin")
+Ingredient.create(name: "tonic water")
+Ingredient.create(name: "tequila")
+Ingredient.create(name: "rum")
+Ingredient.create(name: "cola")
+Ingredient.create(name: "kahlua")
+Ingredient.create(name: "milk")
+Ingredient.create(name: "lime juice")
