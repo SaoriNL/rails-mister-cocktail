@@ -8,15 +8,33 @@
   h2 {
     color: white;
   }
-
 </style>
 <div class="container">
+  <div>
+    <%= image_tag "logo.png", alt: "Le Wagon", width: 200 %>
+  </div>
   <h1>Cocktail!</h1>
   <h2><%= link_to "Create a cocktail", new_cocktail_path, class: 'btn btn-primary mt-3' %></h2>
-  <div class="card-tags">
-    <% @cocktails.each do |cocktail| %>
-      <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-        <%# <p><%= cocktail.name %>
-    <% end %>
+  <%# <div class="card" style="width: 18rem;"> %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 cards">
+        <% @cocktails.each do |cocktail| %>
+          <div class="index-card">
+            <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) "> %>
+            <% if cocktail.photo.attached? %>
+              <%= cl_image_tag cocktail.photo.key, height: 100, width: 200, crop: :fill %>
+            <% else %>
+              <%= image_tag "testcocktail.png", height: 100, width: 200, crop: :fill %>
+            <% end %>
+            <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+            <%# <p><%= cocktail.name %>
+          </div>
+          <% end %>
+      </div>
+    </div>
   </div>
+</div>
+</div>
+</div>
 </div>

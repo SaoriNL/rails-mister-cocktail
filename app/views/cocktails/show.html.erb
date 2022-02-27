@@ -5,11 +5,13 @@
 <div class="container">
   <h2>Ingredients</h2>
   <div class="cards mt-4">
-  <h1><% @doses.each do |dose| %></h1>
-    <p><strong><%= dose.ingredient.name %></strong>:</p>
-    <p><%= dose.description %></p>
-  <h1><% end %></h1>
+    <h1><% @doses.each do |dose| %></h1>
+      <p><strong><%= dose.ingredient.name %></strong>:</p>
+      <p><%= dose.description %></p>
+    <h1><% end %></h1>
   </div>
   <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+
+  <p><%= link_to "delete this cocktail", cocktail_path(@cocktail), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this cocktail?" } %></p>
   <p><%= link_to 'Home', cocktails_path, class: 'btn btn-primary mt-3' %></p>
 </div>
