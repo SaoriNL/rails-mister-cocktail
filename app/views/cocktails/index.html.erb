@@ -19,30 +19,24 @@
   <div class="container">
     <div class="row">
       <div class="col-12 cards">
-        <div class="card-img-top">
-          <% @cocktails.each do |cocktail| %>
-            <div class="index-card ms-5 rounded-3 my-5 zoom" style="background-color:white;">
-              <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) "> %>
-              <% if cocktail.photo.attached? %>
-                <%= cl_image_tag cocktail.photo.key, height: 100, width: 200, crop: :fill %>
-              <% else %>
-                <%= image_tag "testcocktail.png", height: 100, width: 200, crop: :fill %>
-              <% end %>
-            </div>
-            <div class="card-body">
-              <div class="index-card-infos">
-                <div class="info-card">
-                  <p style="color:black"><%= cocktail.name.upcase %></p>
-                </div>
+        <% @cocktails.each do |cocktail| %>
+          <div class="index-card ms-5 rounded-3 my-5 zoom" style="background-color:white;">
+            <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) "> %>
+            <% if cocktail.photo.attached? %>
+              <%= cl_image_tag cocktail.photo.key, height: 100, width: 200, crop: :fill %>
+            <% else %>
+              <%= image_tag "testcocktail.png", height: 100, width: 200, crop: :fill %>
+            <% end %>
+            <div class="index-card-infos">
+              <div class="info-card">
+                <p style="color:black"><%= cocktail.name.upcase %></p>
               </div>
-              <p><%= link_to "", cocktail_path(cocktail), class:"card-link" %></p>
-              <%# <p><%= cocktail.name %>
+            <p><%= link_to "", cocktail_path(cocktail), class:"card-link" %></p>
             </div>
-          <% end %>
-        </div>
+            <%# <p><%= cocktail.name %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>
